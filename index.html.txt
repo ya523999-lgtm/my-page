@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>急診五級檢傷標準化教學教案 (TTT)</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        header {
+            border-bottom: 3px solid #1f497d;
+            padding-bottom: 20px;
+            margin-bottom: 35px;
+        }
+        .instructor-badge {
+            display: inline-block;
+            background-color: #e2efda;
+            color: #375623;
+            padding: 6px 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #1f497d;
+            margin: 10px 0;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        .meta-grid {
+            display: table;
+            width: 100%;
+            margin-top: 20px;
+            background: #f8fafc;
+            border-radius: 6px;
+            padding: 15px;
+            border-left: 5px solid #1f497d;
+        }
+        .meta-item {
+            display: table-cell;
+            width: 25%;
+            padding: 5px 15px;
+            font-size: 0.95em;
+        }
+        .meta-item strong {
+            color: #1f497d;
+            display: block;
+            margin-bottom: 4px;
+        }
+        h2 {
+            color: #1f497d;
+            font-size: 1.5em;
+            border-left: 5px solid #1f497d;
+            padding-left: 12px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #2c5282;
+            font-size: 1.2em;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight-box {
+            background-color: #f0f4f8;
+            border: 1px solid #d2e3f3;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .highlight-box h4 {
+            margin-top: 0;
+            color: #1f497d;
+            font-size: 1.1em;
+        }
+        
+        /* Table Styling */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin: 25px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95em;
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        th {
+            background-color: #1f497d;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        /* Triage Level Colors */
+        .level-1 { background-color: #f2dcdb; color: #c00000; font-weight: bold; text-align: center; }
+        .level-2 { background-color: #fce4d6; color: #e36c09; font-weight: bold; text-align: center; }
+        .level-3 { background-color: #fff2cc; color: #7f6000; font-weight: bold; text-align: center; }
+        .level-4 { background-color: #e2efda; color: #375623; font-weight: bold; text-align: center; }
+        .level-5 { background-color: #f2f2f2; color: #595959; font-weight: bold; text-align: center; }
+        
+        .timeline-section {
+            border-left: 3px dashed #cbd5e1;
+            padding-left: 25px;
+            margin-left: 10px;
+            position: relative;
+        }
+        .timeline-block {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-block::before {
+            content: "";
+            position: absolute;
+            left: -32px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #1f497d;
+            border: 2px solid #ffffff;
+        }
+        .time-badge {
+            background-color: #1f497d;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        
+        .case-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-top: 4px solid #e36c09;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .case-title {
+            font-weight: bold;
+            color: #e36c09;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9em;
+            color: #718096;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="instructor-badge">資深急診臨床教學護理師專用教案</div>
+        <h1>突破盲點的精準決策：急診五級檢傷（TTAS）標準化與臨床實務應用</h1>
+        <p style="color: #4a5568; font-size: 1.1em; margin: 5px 0 0 0;">結合啟發式教學、實證護理與臨床情境模擬之 TTT 課程指引</p>
+        
+        <div class="meta-grid">
+            <div class="meta-item">
+                <strong>授課對象</strong>
+                急診新進人員 (具備急重症2年經驗)
+            </div>
+            <div class="meta-item">
+                <strong>課程時間</strong>
+                45 分鐘
+            </div>
+            <div class="meta-item">
+                <strong>核心策略</strong>
+                啟發式提問、EBN對照、案例討論
+            </div>
+            <div class="meta-item">
+                <strong>設計者</strong>
+                資深急診臨床教學護理師
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h2>一、 核心教學目標 (KSA 架構)</h2>
+        <div style="display: block; margin-top: 15px;">
+            <h3>👁️ 認知 (Knowledge)</h3>
+            <ul>
+                <li>學員能準確敘述 TTAS 五個等級的「核心生命徵象危急度」與「建議候診時間限制」。</li>
+                <li>學員能辨識臨床上常見的「高危低估（Under-triage）」與「低危高估（Over-triage）」指標。</li>
+            </ul>
+
+            <h3>🧠 技能 (Skill)</h3>
+            <ul>
+                <li>熟練運用「一視、二聽、三觸、四量」的啟發式快速評估公式，在 2 分鐘內完成精準檢傷。</li>
+                <li>能針對非典型主訴（如：老人非典型心肌梗塞、隱匿性內出血），正確分析病灶機轉並調升檢傷級數。</li>
+            </ul>
+
+            <h3>🩺 態度 (Attitude)</h3>
+            <ul>
+                <li>在高壓的檢傷環境下，展現具備實證支持的批判性思考與決策自信。</li>
+                <li>展現對病患與家屬的同理心，並能用結構化專業語彙進行跨團隊的危急度溝通。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>二、 台灣急診檢傷分類系統 (TTAS) 標準化指引</h2>
+        <p>教學提示：針對有2年經驗的同仁，授課時應著重於各級別的<strong>「生理臨界點」</strong>與<strong>「隱匿危急關鍵字」</strong>。</p>
+        
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 12%;">檢傷級數</th>
+                        <th style="width: 15%;">定義與急迫性</th>
+                        <th style="width: 12%;">建議候診時間</th>
+                        <th style="width: 13%;">意識 (GCS)</th>
+                        <th style="width: 13%;">心跳 (HR)</th>
+                        <th style="width: 13%;">血壓 (SBP)</th>
+                        <th style="width: 22%;">臨床經典主訴與紅字警訊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="level-1">第一級<br>復甦甦醒</td>
+                        <td><strong>立即威脅生命</strong><br>需立刻進入急救室</td>
+                        <td><strong>立即處置</strong><br>(0分鐘)</td>
+                        <td>GCS ≦ 8分</td>
+                        <td>心跳停止 /<br>心搏極度過緩</td>
+                        <td>無血壓 /<br>嚴重休克</td>
+                        <td>• OHCA、大血管創傷噴血<br>• 嚴重呼吸窘迫、狀態癲癇<br>• 敗血性休克後期 (意識不清、無脈搏)</td>
+                    </tr>
+                    <tr>
+                        <td class="level-2">第二級<br>危急</td>
+                        <td><strong>潛在生命威脅</strong><br>狀況可能快速惡化</td>
+                        <td><strong>≦ 10 分鐘</strong></td>
+                        <td>GCS 9 - 13分</td>
+                        <td>HR > 130<br>或 &lt; 40</td>
+                        <td>SBP &lt; 90<br>或 > 220</td>
+                        <td>• 典型缺血性胸痛 (AMI)<br>• 突發單側肢體無力/失語 (Stroke)<br>• 疑似主動脈剝離 (撕裂痛)<br>• 照護者主訴意識突然變差</td>
+                    </tr>
+                    <tr>
+                        <td class="level-3">第三級<br>緊急</td>
+                        <td><strong>狀況穩定</strong><br>但有潛在惡化風險</td>
+                        <td><strong>≦ 30 分鐘</strong></td>
+                        <td>GCS 14 - 15分</td>
+                        <td>HR 100 - 120<br>或 50 - 59</td>
+                        <td>SBP 160 - 220<br>或 90 - 100</td>
+                        <td>• 嚴重急性腹痛 (NRS ≧ 7分)<br>• 高燒合併癌症/免疫功能低下<br>• 伴隨明顯變形之閉鎖性骨折<br>• 嚴重嘔吐/腹瀉伴隨明顯脫水</td>
+                    </tr>
+                    <tr>
+                        <td class="level-4">第四級<br>次緊急</td>
+                        <td><strong>慢性或輕症</strong><br>無立即惡化風險</td>
+                        <td><strong>≦ 60 分鐘</strong></td>
+                        <td>GCS 15分<br>(完全清醒)</td>
+                        <td>HR 60 - 99<br>(正常範圍)</td>
+                        <td>SBP 101 - 159<br>(正常範圍)</td>
+                        <td>• 輕微腹瀉/嘔吐，無脫水徵象<br>• 局部一般關節扭傷 / 擦傷、挫傷<br>• 超過 3 天以上的慢性頭痛<br>• 輕微上呼吸道症狀 (無發燒)</td>
+                    </tr>
+                    <tr>
+                        <td class="level-5">第五級<br>非緊急</td>
+                        <td><strong>非急診範疇</strong><br>屬於常規醫療服務</td>
+                        <td><strong>≦ 120 分鐘</strong></td>
+                        <td>GCS 15分<br>(完全清醒)</td>
+                        <td>正常範圍</td>
+                        <td>正常範圍</td>
+                        <td>• 門診常規換藥 / 手術後拆線<br>• 單純前來補開慢性病連續處方簽<br>• 慢性局部皮膚發癢 (無紅腫熱痛)<br>• 體檢或單純申請診斷證明書</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>三、 45分鐘課程時間配置與教學方法</h2>
+        <div class="timeline-section">
+            
+            <div class="timeline-block">
+                <h3><span class="time-badge">00-10 分鐘</span> 第一階段：破冰與啟發式盲點引導</h3>
+                <p><strong>教學方法：</strong> 啟發式提問 (Heuristic Questioning) + 翻轉思維</p>
+                <div class="highlight-box">
+                    <h4>💡 教學引導情境：</h4>
+                    <p>「各位都有 2 年 ICU 或 ER 經驗。想像一下，一個 70 歲阿嬤主訴『肚子悶、有點喘、冒冷汗，吐了一次』，血壓 130/80 mmHg，心跳 95 次/分。直覺上，你會掛幾級？為什麼？」</p>
+                    <p><strong>盲點拆解：</strong> 帶出臨床直覺公式的優缺點。直覺讓我們快，但也可能讓我們漏掉「老年人非典型 AMI」的致命警訊。藉此引入結構化評估的必要性。</p>
+                </div>
+            </div>
+
+            <div class="timeline-block">
+                <h3><span class="time-badge">10-25 分鐘</span> 第二階段：核心架構與實證指引對照</h3>
+                <p><strong>教學方法：</strong> 互動式講授 + 實證文獻佐證 (EBN)</p>
+                <ul>
+                    <li><strong>生命威脅時間點重新定義：</strong> 一級（馬上死）、二級（等下死）、三級（晚點死/會變壞）、四級（不會死）、五級（走錯棚）。</li>
+                    <li><strong>標準化思維鐵律：</strong> 生命徵象判定出來的級數是「基本盤」，只能依據主訴與實證指標往上調升（Up-triage），原則上不可任意往下調降。</li>
+                </ul>
+            </div>
+
+            <div class="timeline-block">
+                <h3><span class="time-badge">25-40 分鐘</span> 第三階段：臨床模擬情境與實戰交叉辯論</h3>
+                <p><strong>教學方法：</strong> 實際案例討論 (Case-based Discussion) + 角色扮演</p>
+                
+                <div class="case-card">
+                    <div class="case-title">【案例一：隱匿的危機 — 啟動調升思維】</div>
+                    <p><strong>個案：</strong> 45 歲男性，騎車自摔 2 小時後走路進急診。主訴「左上腹有點痛（NRS 3分）」，生命徵象：BP 110/70 mmHg, HR 105次/分, RR 18次/分。</p>
+                    <p><strong>引導重點：</strong> 表面上看來生命徵象尚穩、輕微腹痛屬三級。但引導學員注意「HR > SBP (休克指數 > 1) 且有左上腹挫傷機轉」，應啟發學員聯想「脾臟破裂潛在出血休克」，實證指引應調升為<strong>二級</strong>。</p>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-title">【案例二：情緒與疾病的鑑別 — 調降與安置思維】</div>
+                    <p><strong>個案：</strong> 22 歲女性，與家屬吵架後被抬進急診。過度換氣、雙手呈「助產士手」痙攣、大哭大鬧。家屬極度緊繃要求立刻看診。</p>
+                    <p><strong>引導重點：</strong> 如何運用 TTAS 的 SpO2 評估與臨床心理急症指引，客觀將其歸類在合理的<strong>三級或四級</strong>。並演練如何運用專業結構化語言進行適切的衛教安置，避免排擠一、二級醫療資源。</p>
+                </div>
+            </div>
+
+            <div class="timeline-block">
+                <h3><span class="time-badge">40-45 分鐘</span> 第四階段：總結與核心價值賦歸</h3>
+                <p><strong>教學方法：</strong> 即時反饋 (Debriefing) 與學習反思</p>
+                <p>強調精準檢傷是維護急診病人安全的第一道防線，運用實證工具為自己的臨床決策背書。</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>四、 評量機制 (三維度考評)</h2>
+        <ol>
+            <li>
+                <strong>課堂即時形成性評量 (Formative Assessment)：</strong>
+                <br>在第三階段案例討論中，評估學員能否在 <strong>30秒內</strong> 精確判定個案 TTAS 級數，並給出 <strong>2 個具備實證支持</strong>（如生理指標、受傷機轉、高危警訊）的關鍵理由。
+            </li>
+            <li style="margin-top: 12px;">
+                <strong>臨床情境模擬考評 (OSCE / 臨床影子檢傷)：</strong>
+                <br>課後一週內，由教學護理師在檢傷線上進行 3 個隨機真實病患的「影子檢傷 (Shadow Triage)」對照。評估新進人員與資深人員的檢傷一致率是否達到 <strong>100%</strong>，且評估至點選級數需在 <strong>2 分鐘內</strong> 完成。
+            </li>
+            <li style="margin-top: 12px;">
+                <strong>行為與溝通評量 (Attitude & Communication)：</strong>
+                <br>採用檢傷溝通檢核表。當面對被判定為四、五級而產生不滿的病患 or 家屬時，學員能否運用專業結構化語言（例如：「依據指引，我們測量您的血氧與血壓目前處於穩定範圍...」）進行科學衛教與同理心溝通。
+            </li>
+        </ol>
+    </section>
+
+    <footer>
+        <p>急診五級檢傷標準化教學教案 © 2026 · 臨床教學護理師專業產出指引</p>
+    </footer>
+</div>
+
+</body>
+</html>
